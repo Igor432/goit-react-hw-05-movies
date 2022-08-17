@@ -29,7 +29,7 @@ const Home = () => {
         }}
       >
         {trending.map(movie => (
-          <Link to={`/movies${movie.backdrop_path}`} key={movie.id}>
+          <Link to="/movies" key={movie.id}>
             {movie.title}
           </Link>
         ))}
