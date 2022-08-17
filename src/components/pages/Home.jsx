@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { useState, useEffect, useContext } from 'react';
 
 const Home = () => {
@@ -21,9 +22,16 @@ const Home = () => {
       <h1>Trending Todays</h1>
       <img src="https://via.placeholder.com/960x240" alt="" />
 
-      <ul>
+      <ul
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
         {trending.map(movie => (
-          <li key={movie.id}>{movie.title}</li>
+          <Link to={`/movies${movie.backdrop_path}`} key={movie.id}>
+            {movie.title}
+          </Link>
         ))}
       </ul>
     </main>
