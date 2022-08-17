@@ -1,13 +1,13 @@
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 
 const Home = () => {
   const [trending, setTrending] = useState([]);
 
   useEffect(() => {
     getTrending();
-  }, []);
+  }, [getTrending]);
 
   async function getTrending() {
     const trends = await axios.get(
@@ -29,7 +29,7 @@ const Home = () => {
         }}
       >
         {trending.map(movie => (
-          <Link to="/movies" key={movie.id}>
+          <Link to="/movies/" key={movie.id}>
             {movie.title}
           </Link>
         ))}
