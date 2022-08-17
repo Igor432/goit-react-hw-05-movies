@@ -6,16 +6,15 @@ const Home = () => {
   const [trending, setTrending] = useState([]);
 
   useEffect(() => {
+    async function getTrending() {
+      const trends = await axios.get(
+        'https://api.themoviedb.org/3/trending/movie/day?api_key=335e18ee033f463b61f137f6ef07bd65'
+      );
+      setTrending(trends.data.results);
+      console.log(trending);
+    }
     getTrending();
-  }, [getTrending]);
-
-  async function getTrending() {
-    const trends = await axios.get(
-      'https://api.themoviedb.org/3/trending/movie/day?api_key=335e18ee033f463b61f137f6ef07bd65'
-    );
-    setTrending(trends.data.results);
-    console.log(trending);
-  }
+  }, []);
 
   return (
     <main>
