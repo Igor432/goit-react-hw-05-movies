@@ -9,6 +9,10 @@ export const MovieDetails = () => {
   const [movie, setMovie] = useState([]);
   const [actors, setActors] = useState();
   const [reviews, setReviews] = useState();
+  const [genres, setGenres] = useState([]);
+
+  const genresList = genres.map(genre => genre.name);
+  console.log(genresList);
 
   useEffect(() => {
     if (id === '') {
@@ -20,6 +24,7 @@ export const MovieDetails = () => {
         `https://api.themoviedb.org/3/movie/${id}?api_key=335e18ee033f463b61f137f6ef07bd65&language=en-US`
       );
       setMovie(filmDetail.data);
+      setGenres(filmDetail.data.genres);
     };
     movieDetails();
   }, [id]);
@@ -54,11 +59,20 @@ export const MovieDetails = () => {
         height="auto"
       />
       <h1>Movie: {movie.title}</h1>
-      <h3>Genres: {movie.genre_ids}</h3>
+      <h3>Genres:</h3>
+      <p>{genresList.join(', ')}</p>
       <h3>Overview: </h3>
       <p>{movie.overview}</p>
       <h2>Additional Information:</h2>
-      <ul>
+      <ul
+        style={{
+          listStyle: 'none',
+          display: 'flex',
+          fontSize: '24px',
+          flexDirection: 'column',
+          gap: '20px',
+        }}
+      >
         <li>
           <Link to="cast">Cast:</Link>
         </li>
@@ -79,3 +93,10 @@ export const MovieDetails = () => {
     </div>
   );
 };
+
+/*
+  {genresList.map(genre => (
+            <li key={genre.name}>{genre.name}</li>
+          ))}
+
+*/
