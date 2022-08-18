@@ -1,18 +1,17 @@
 import { useEffect, useState } from 'react';
-import Cast from 'components/Cast';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 export const MovieDetails = () => {
-  const { id } = useParams();
+  const { id } = useParams('');
   const [movie, setMovie] = useState([]);
   const [actors, setActors] = useState();
   const [reviews, setReviews] = useState();
 
   useEffect(() => {
-    if (id === null) {
+    if (id === '') {
       return;
     }
 

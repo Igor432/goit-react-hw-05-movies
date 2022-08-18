@@ -46,7 +46,7 @@ const Movies = () => {
       >
         {movieList.map(film => (
           <li key={film.id}>
-            <Link to={`${film.id}`} key={film.id}>
+            <Link to={`${film.id}`} key={film.id} >
               {film.title}
             </Link>
           </li>
