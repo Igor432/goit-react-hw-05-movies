@@ -27,7 +27,7 @@ const Home = () => {
         }}
       >
         {trending.map(movie => (
-          <Link to="/movies/" key={movie.id}>
+          <Link to={`movies/${movie.id}`} key={movie.id}>
             {movie.title}
           </Link>
         ))}

@@ -67,7 +67,15 @@ export const MovieDetails = () => {
           <Link to="reviews">Reviews</Link>
         </li>
       </ul>
-      <Outlet context={[actors, reviews]} />
+      <div
+        style={{
+          height: '250px',
+          backgroundColor: 'white',
+          borderTop: '1px grey groove ',
+        }}
+      >
+        <Outlet context={[actors, reviews]} />
+      </div>
     </div>
   );
 };
