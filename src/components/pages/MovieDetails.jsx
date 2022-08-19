@@ -12,7 +12,6 @@ export const MovieDetails = () => {
   const [genres, setGenres] = useState([]);
 
   const genresList = genres.map(genre => genre.name);
-  console.log(genresList);
 
   useEffect(() => {
     if (id === '') {
@@ -58,7 +57,7 @@ export const MovieDetails = () => {
         width="340"
         height="auto"
       />
-      <h1>Movie: {movie.title}</h1>
+      <h1>{movie.title}</h1>
       <h3>Genres:</h3>
       <p>{genresList.join(', ')}</p>
       <h3>Overview: </h3>
@@ -74,7 +73,7 @@ export const MovieDetails = () => {
         }}
       >
         <li>
-          <Link to="cast">Cast:</Link>
+          <Link to="cast">Cast</Link>
         </li>
 
         <li>
