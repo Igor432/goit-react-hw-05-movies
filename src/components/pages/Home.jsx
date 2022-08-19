@@ -5,6 +5,10 @@ import '../pages/styles.css';
 
 const Home = () => {
   const [trending, setTrending] = useState([]);
+  const [posters, setPosters] = useState(
+    trending.map(movie => movie.poster_path)
+  );
+  const [imgLink, setImgLink] = useState('');
 
   useEffect(() => {
     async function getTrending() {
@@ -14,12 +18,33 @@ const Home = () => {
       setTrending(trends.data.results);
     }
     getTrending();
-  });
+  }, []);
+
+  useEffect(() => {
+    setPosters(trending.map(movie => movie.poster_path));
+  }, [trending]);
 
   return (
     <main>
       <h1>Trending Todays</h1>
-      <img src="https://via.placeholder.com/960x240" alt="" />
+
+      <ul
+        class="slider_ul"
+        style={{
+          display: 'flex',
+          flexWrap: 'nowrap',
+          flexDirection: 'row',
+        }}
+      >
+        {posters.map(poster => (
+          <img
+            key={poster}
+            class="moving_images"
+            src={`https://image.tmdb.org/t/p/original/${poster}`}
+            alt=""
+          />
+        ))}
+      </ul>
 
       <ul class="trending_list" style={{}}>
         {trending.map(movie => (

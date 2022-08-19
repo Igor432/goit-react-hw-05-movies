@@ -2,16 +2,47 @@ nav {
     border-bottom: 0.1em rgba(128, 128, 128, 0.723) groove;
 }
 
+main {
+    overflow-x: hidden;
+
+}
+
 .image_section  {
 display: flex;
 flex-direction: row;
 border-bottom: 0.1em rgba(128, 128, 128, 0.723) groove;
 padding-bottom: 40px;
+flex-wrap: wrap;
   }
 
   .info_section {
     margin-left: 30px;
   }
+
+
+
+.slider_ul {
+
+    display: flex;
+    padding: 0;
+    animation: cambio 70s infinite linear;
+}
+
+@keyframes cambio {
+    from {margin-left: 0%}
+    to {margin-left: -100%}
+}
+
+
+.moving_images {
+position: relative;
+    width: 120px;
+    height: auto;
+}
+ 
+
+
+
 
 /*
 .additional_section {

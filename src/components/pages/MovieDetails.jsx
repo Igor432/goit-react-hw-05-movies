@@ -60,6 +60,8 @@ export const MovieDetails = () => {
         />
         <div class="info_section">
           <h1>{movie.title}</h1>
+          <h3>Release Date</h3>
+          <p>{movie.release_date}</p>
           <h3>Genres:</h3>
           <p>{genresList.join(', ')}</p>
           <h3>Overview: </h3>

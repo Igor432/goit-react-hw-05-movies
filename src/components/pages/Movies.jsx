@@ -44,10 +44,7 @@ const Movies = () => {
       </form>
       <ul
         class="search_list"
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-        }}
+       
       >
         {movieList.map(film => (
           <li key={film.id}>
