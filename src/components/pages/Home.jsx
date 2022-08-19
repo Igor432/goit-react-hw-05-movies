@@ -5,10 +5,7 @@ import '../pages/styles.css';
 
 const Home = () => {
   const [trending, setTrending] = useState([]);
-  const [posters, setPosters] = useState(
-    trending.map(movie => movie.poster_path)
-  );
-  const [imgLink, setImgLink] = useState('');
+  const [posters, setPosters] = useState([]);
 
   useEffect(() => {
     async function getTrending() {
