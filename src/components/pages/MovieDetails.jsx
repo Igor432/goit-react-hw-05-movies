@@ -78,11 +78,15 @@ export const MovieDetails = () => {
         }}
       >
         <li>
-          <Link to="cast">Cast</Link>
+          <Link class="list_links" to="cast">
+            Cast
+          </Link>
         </li>
 
         <li>
-          <Link to="reviews">Reviews</Link>
+          <Link class="list_links" to="reviews">
+            Reviews
+          </Link>
         </li>
       </ul>
 

@@ -52,12 +52,12 @@ font-size: 20px;
     height: 36px;
     width: 150px;
     font-size: 20px;
-    border:0.1em solid #FFFFFF;
-
+    border:0.1em solid #2018185a;
+font-weight: 800;
     border-radius:0.12em;
-    background-color: #201818b2;
+    background-color: #2018185a;
     transition: all 0.2s;
-color: #FFFFFF;
+color: #0b0303;
 cursor: pointer;
 box-sizing: border-box
 }
@@ -65,7 +65,7 @@ box-sizing: border-box
 .submit_button:hover {
     color:#000000;
 background-color:#01b4e4;
-border:0.1em solid #160a0aac;
+border:0.07em solid #160a0aac;
 }
 
 .search_list {
@@ -74,4 +74,9 @@ gap: 8px;
         display: 'flex';
         flex-direction: 'column';
     font-size: 20px;
+}
+
+.list_links:hover {
+    color:#01b4e4;
+
 }

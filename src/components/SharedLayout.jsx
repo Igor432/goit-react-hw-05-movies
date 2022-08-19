@@ -22,10 +22,14 @@ const SharedLayout = () => {
             }}
           >
             <li>
-              <Link to="/">Home</Link>
+              <Link class="list_links" to="/">
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="/movies">Movies</Link>
+              <Link class="list_links" to="/movies">
+                Movies
+              </Link>
             </li>
           </ul>
         </nav>
