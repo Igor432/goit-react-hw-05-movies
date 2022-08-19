@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import '../pages/styles.css';
 
 const Home = () => {
   const [trending, setTrending] = useState([]);
@@ -20,14 +21,9 @@ const Home = () => {
       <h1>Trending Todays</h1>
       <img src="https://via.placeholder.com/960x240" alt="" />
 
-      <ul
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-        }}
-      >
+      <ul class="trending_list" style={{}}>
         {trending.map(movie => (
-          <Link to={`movies/${movie.id}`} key={movie.id}>
+          <Link class="list_links" to={`movies/${movie.id}`} key={movie.id}>
             {movie.title}
           </Link>
         ))}

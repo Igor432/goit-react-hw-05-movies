@@ -50,18 +50,23 @@ export const MovieDetails = () => {
   }, [id]);
 
   return (
-    <div>
-      <img
-        src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-        alt={movie.title}
-        width="340"
-        height="auto"
-      />
-      <h1>{movie.title}</h1>
-      <h3>Genres:</h3>
-      <p>{genresList.join(', ')}</p>
-      <h3>Overview: </h3>
-      <p>{movie.overview}</p>
+    <div class="movie_details">
+      <div class="image_section">
+        <img
+          src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+          alt={movie.title}
+          width="340"
+          height="auto"
+        />
+        <div class="info_section">
+          <h1>{movie.title}</h1>
+          <h3>Genres:</h3>
+          <p>{genresList.join(', ')}</p>
+          <h3>Overview: </h3>
+          <p>{movie.overview}</p>
+        </div>
+      </div>
+
       <h2>Additional Information:</h2>
       <ul
         style={{
@@ -80,13 +85,8 @@ export const MovieDetails = () => {
           <Link to="reviews">Reviews</Link>
         </li>
       </ul>
-      <div
-        style={{
-          height: '250px',
-          backgroundColor: 'white',
-          borderTop: '1px grey groove ',
-        }}
-      >
+
+      <div class="outlet">
         <Outlet context={[actors, reviews]} />
       </div>
     </div>

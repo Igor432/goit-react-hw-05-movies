@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
+import '../components/pages/styles.css';
 
 const SharedLayout = () => {
   return (
-    <div>
+    <div class="header">
       <header>
         <nav
           style={{

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import '../pages/styles.css';
 
 const Movies = () => {
   const [movie, setMovie] = useState('');
@@ -30,15 +31,19 @@ const Movies = () => {
   return (
     <div>
       <h1>Movie Search</h1>
-      <form action="search" onSubmit={onSubmit}>
+      <form action="search" onSubmit={onSubmit} class="form">
         <input
+          class="search_input"
           type="text"
           name="search"
           placeholder="Enter Name of the movie"
         />
-        <button type="submit">Search</button>
+        <button type="submit" class="submit_button">
+          Search
+        </button>
       </form>
       <ul
+        class="search_list"
         style={{
           display: 'flex',
           flexDirection: 'column',
@@ -46,7 +51,7 @@ const Movies = () => {
       >
         {movieList.map(film => (
           <li key={film.id}>
-            <Link to={`${film.id}`} key={film.id} >
+            <Link class="list_links" to={`${film.id}`} key={film.id}>
               {film.title}
             </Link>
           </li>
