@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import '../pages/styles.css';
+import style from '../components/movies.module.css';
 
 const Home = () => {
   const [trending, setTrending] = useState([]);
@@ -25,29 +25,37 @@ const Home = () => {
     <main>
       <h1>Trending Todays</h1>
 
-      <ul
-        class="slider_ul"
-        style={{
-          display: 'flex',
-          flexWrap: 'nowrap',
-          flexDirection: 'row',
-        }}
-      >
+      <ul className={style.slider_ul}>
         {posters.map(poster => (
           <img
             key={poster}
-            class="moving_images"
+            className={style.moving_images}
             src={`https://image.tmdb.org/t/p/original/${poster}`}
             alt=""
           />
         ))}
       </ul>
 
-      <ul class="trending_list" style={{}}>
+      <ul className={style.trending_list} style={{}}>
         {trending.map(movie => (
-          <Link class="list_links" to={`movies/${movie.id}`} key={movie.id}>
-            {movie.title}
-          </Link>
+          <li className={style.link_item}>
+            <Link
+              className={style.list_links}
+              to={`movies/${movie.id}`}
+              key={movie.id}
+            >
+              <img
+                className={style.poster_img}
+                key={movie.title}
+                src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                alt=""
+              ></img>
+              <div className={style.title_div}>
+                <p className={style.movie_name}>{movie.title}</p>
+                <p className={style.vote}>IMDB: {movie.vote_average}</p>
+              </div>
+            </Link>
+          </li>
         ))}
       </ul>
     </main>
